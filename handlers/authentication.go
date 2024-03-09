@@ -18,7 +18,7 @@ func clearAuthenticatedCookie(w http.ResponseWriter) {
 	})
 }
 
-func setAuthenticated(w http.ResponseWriter, r *http.Request, username string) {
+func setAuthenticated(w http.ResponseWriter, username string) {
 	// Set a cookie or session variable to mark the user as authenticated
 	fmt.Printf("\nSETAUTHENTICATED WITH USERNAME = %v\n\n", username)
 	http.SetCookie(w, &http.Cookie{

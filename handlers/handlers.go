@@ -39,7 +39,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 
 		// Validate user credentials (in a real-world application, you would hash and compare passwords)
 		if models.ValidateUser(username, password) {
-			setAuthenticated(w, r, username)
+			setAuthenticated(w, username)
 			http.Redirect(w, r, "/", http.StatusSeeOther)
 			return
 		}
@@ -71,7 +71,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		models.CreateUser(username, password)
 
 		// Set user as authenticated
-		setAuthenticated(w, r, username)
+		setAuthenticated(w, username)
 
 		http.Redirect(w, r, "/", http.StatusSeeOther)
 		return
