@@ -72,7 +72,6 @@ func New(username, password string) {
 
 }
 
-// ValidateUser checks if the provided username and password are valid.
 func ValidateUser(username, password string) bool {
 
 	Connect()
@@ -85,13 +84,9 @@ func ValidateUser(username, password string) bool {
 		fmt.Printf("\n err = %v\n\n", err)
 	}
 
-	// user, exists := users[username]
-	// return exists && user.Password == password
 	return user.Password == password
-	// return true
 }
 
-// CreateUser creates a new user (for demonstration purposes, replace with database logic).
 func CreateUser(username, password string) {
 
 	Connect()
